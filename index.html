@@ -43,8 +43,10 @@
 <!-- Banner -->
 <section id="banner">
     <div class="inner">
-        <h2>FK Coding Camp 2023</h2>
-        <p>A small website to help us learn how to code</p>
+        <!-- C.1-1 -->
+        <h2>FKPCP Coding Class 2023</h2>
+        <!-- C.1-2 -->
+        <p>A small webisite to help us learn how to code</p>
         <ul class="actions">
             <li><a href="#verses" class="button big scrolly">Go to Verses</a></li>
         </ul>
@@ -53,67 +55,43 @@
 <!-- Verses -->
 <section id="verses" class="wrapper" style="background: #f2f2f2;">
     <div class="container">
+        <!-- H.2-EC Create the submission form, verse columns and headers -->
+        <!-- C.1-5 -->
         <header class="major">
-            <h2>Add a Bible Verse</h2>
+            <!-- C.1-3 -->
+            <h2>Verses</h2>
+            <!-- C.1-4 -->
+            <p>This is where the verses section will go.<br> This is showing the line break from the last line.<br> And now we are using a second line break.</p>
+            <!-- C.2-1 -->
+            <!-- <input type="submit" value="Click this button to add a verse!" onclick="addVerse()"> -->
         </header>
-        <div style="display: flex; flex-flow: row wrap">
-            <div style="width: 70%">
-                <h3>Verse</h3>
-                <input type="text" id="verse-content-form" name="verse-content"
-                       placeholder="Ex. Set your minds on things that are above, not on things that are on earth.">
-            </div>
-            <div style="width: 5%">
-            </div>
-            <div style="width: 25%">
-                <h3>Reference</h3>
-                <input type="text" id="verse-ref-form" name="verse-ref" placeholder="Colossians 3:2"><br><br>
-            </div>
-        </div>
-        <div style="text-align: center; margin-bottom: 60px;">
-            <input type="submit" value="Submit" onclick="addVerse()">
-        </div>
-    </div>
-    <div id="my-verses" class="container">
-        <!-- Column Headings -->
-        <header class="major">
-            <h2>My Verses</h2>
-        </header>
-        <div id="verse-table-header" style="display: flex">
-            <div class="col-header first-col">
-                <h3>Verse</h3>
-            </div>
-            <div class="col-header second-col">
-                <h3>Ref.</h3>
-            </div>
-            <div class="col-header third-col">
-                <h3></h3>
-            </div>
-        </div>
-
-        <!-- Verses -->
-        <div class="verses">
-        </div>
     </div>
 </section>
 
 <!-- Lower Banner -->
+<!-- C.1-8 -->
 <div class="inspirational-verse">
-    <h5 style="color: whitesmoke">For the word of God is alive and active. Sharper than any double-edged sword, it
-        penetrates even to dividing soul and spirit, joints and marrow; it judges the thoughts and attitudes of the
-        heart.</h5>
-    <p style="color: whitesmoke; margin: 0">Hebrews 4:12</p>
+    <!-- C.1-6 -->
+    <h2 style ="color: pink; background-color: plum; padding: 30px;"">For the word of God is alive and active. Sharper than any double-edged sword, it penetrates even to dividing
+        soul and spirit, joints and marrow; it judges the thoughts and attitudes of the heart. Hebrews 4:12</h2>
 </div>
 
 <!-- Footer -->
+<!-- C.1-7 -->
 <footer id="footer">
     <ul class="icons">
-        <li><a href="https://twitter.com" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-        <li><a href="https://facebook.com" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-        <li><a href="https://instagram.com" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+        <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+        <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+        <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+        <li><a href="#" class="icon fa-dribble"><span class="label">Dribble</span></a></li>
+        <li><a href="#" class="icon fa-envelope"><span class="label">Envelope</span></a></li>
     </ul>
     <ul class="menu">
         <li><a href="about.html">About</a></li>
-        <li><a href="#verses">Go Back to Verses</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#verses">Verses</a></li>
     </ul>
     <span class="copyright">&copy; Copyright. All rights reserved. Design by <a href="http://www.html5webtemplates.co.uk">Responsive Web Templates</a></span>
 </footer>
@@ -121,58 +99,21 @@
 </html>
 
 <script>
-    var numberOfVerses = 0;
+    // H.2-1: Create a global variable to hold the number of verses we have on our page
 
     function addVerse() {
-        numberOfVerses++;
-        let verseContentText = $("#verse-ref-form").val()
-        let verseReferenceText = $("#verse-content-form").val()
-        let backgroundStyle = "";
-        if (numberOfVerses % 2 === 0) {
-            backgroundStyle = "even-background";
-        } else {
-            backgroundStyle = "odd-background"
-        }
-        if (verseContentText && verseReferenceText) {
-            $(".verses").append(
-                `<div style="display: flex;">
-                <div class="verses-table">
-                    <div id="verse-content-${numberOfVerses}" class="verses-table-cell first-col ${backgroundStyle}" onclick="toggleVisibility(firstElementChild)">
-                        <p id="${numberOfVerses}-content" style="margin: 0">${verseContentText}</p>
-                    </div>
-                    <div id="verse-reference-${numberOfVerses}" class="verses-table-cell second-col ${backgroundStyle}" onclick="toggleVisibility(firstElementChild)">
-                        <p id="${numberOfVerses}-reference" style="margin: 0">${verseReferenceText}</p>
-                    </div>
-                    <div id="icons-${numberOfVerses}" class="verses-table-cell third-col">
-                        <span id="${numberOfVerses}-show" class="icon fa-eye show" onclick="showOrHideWhenClicked(id, 'show')"></span>
-                        <span id="${numberOfVerses}-hide" class="icon fa-eye-slash hide" onclick="showOrHideWhenClicked(id, 'hide')"></span>
-                    </div>
-                </div>
-            </div>`
-            );
-        }
-        $("#verse-ref-form").val("")
-        $("#verse-content-form").val("")
+        // H.2-2: Increment the number of verses we have on our page
+        printTheNumberOfVerses();
+        printOddOrEven();
     }
 
-    function showOrHideWhenClicked(showButtonFullId, showOrHide) {
-        let verseNumber = showButtonFullId.split(`-${showOrHide}`)[0]
-        let contentElement = document.getElementById(`${verseNumber}-content`)
-        let referenceElement = document.getElementById(`${verseNumber}-reference`)
-        if (showOrHide === "show") {
-            contentElement.style.visibility = "visible";
-            referenceElement.style.visibility = "visible";
-        } else if (showOrHide === "hide") {
-            contentElement.style.visibility = "hidden";
-            referenceElement.style.visibility = "hidden";
-        }
+    function printTheNumberOfVerses() {
+        // H.2-3: log statement should print the total number of verses
+        console.log("This should print the number of verses there are")
     }
 
-    function toggleVisibility(childElement) {
-        if (childElement.style.visibility === "hidden") {
-            childElement.style.visibility = "visible"
-        } else {
-            childElement.style.visibility = "hidden"
-        }
+    function printOddOrEven() {
+        // H.2-4: log statement should print "even" or "odd"
+        console.log("This should print even or odd depending on how many verses there are")
     }
 </script>
