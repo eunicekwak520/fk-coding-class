@@ -1,12 +1,5 @@
 .inspirational-verse {
-    text-align: center;
-    background-color: #FF8889;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    margin-right: 2rem;
-    margin-left: 2rem;
-    margin-top: 5rem;
-    border-radius: 10px;
+  "text-align: center; border-radius: 10px;"
 }
 
 /*H.2-EC Create the submission form, verse columns and headers*/
